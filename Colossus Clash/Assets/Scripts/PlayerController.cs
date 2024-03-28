@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     /// we do keep PRIVATE variables, but still be able to edit them in Unity's inspector
     /// -Luke
     /// </summary>
+    /// 
+
+    //testing if i can commit delete later - paul
 
     //Speed of Player (Edit in hierarchy, changing numbers here doesn't do anything)
     [SerializeField] private float speed = 5.0f;
