@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveVector;
     private Vector2 lookVector;
     private Vector2 lastLookVector;
-    
+    private Vector3 mousePos;
+
     /// <summary>
     /// So for those who may be unfamiliar, Serialized fields are what
     /// we do keep PRIVATE variables, but still be able to edit them in Unity's inspector
@@ -126,9 +127,30 @@ public class PlayerController : MonoBehaviour
             
             //LERP TIME
             float heading = Mathf.Lerp(lastFrameHeading, currentHeading, t);
+          
             if (activeStickR)
             {
-                transform.rotation=Quaternion.Euler(0f,0f,heading*Mathf.Rad2Deg);
+
+                /* Down below is logic for rotating with the mouse, basically the mousePos needs to be in world space not screenspace
+                Input.mousePosition is in screenspace so I use Camera.main.ScreenToWorldPoint to convert it, then just get a direction 
+                by subtracting transform.position from mousePos and set the rotation in that direction.
+
+                I also added lastMousePos to check if the mouse actually moved, which should not happen if the player is using controller
+                that way this code will use the correct logic depending on which control method is being used this does not really work, 
+                it's whats making the mouse rotation kinda spastic so i'll figure out a better way later - Paul */
+
+                Vector3 lastMousePos = mousePos;
+                mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if(lastMousePos != mousePos)
+                {
+                    Vector3 direction = mousePos - transform.position;
+                    Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, direction);
+                    transform.rotation = targetRotation;
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
+                }
             }
             
             Debug.Log(heading);
