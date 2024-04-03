@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     /// 
 
-    //testing if i can commit delete later - paul
+    //Get references to each control set
+    [SerializeField] private InputActionReference shoot, roll, switchWeapons;
 
     //Speed of Player (Edit in hierarchy, changing numbers here doesn't do anything)
     [SerializeField] private float speed = 5.0f;
@@ -53,30 +54,37 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void Throw(InputAction.CallbackContext context) //Need special parameter called Callback context. We receive this from Unity's Input system
+    //On enable, connect each function to controls
+    private void OnEnable()
     {
-        if (context.started) //Button PRESS, also .performed (continuous) and .canceled (released)
-        {
-            Debug.Log("Bang!");
-        }
+        shoot.action.performed += Shoot;
+        roll.action.performed += Roll;
+        switchWeapons.action.performed += SwitchWeapons;
+    }
+
+    //On disable, disconnect all functions
+    private void OnDisable()
+    {
+        shoot.action.performed -= Shoot;
+        roll.action.performed -= Roll;
+        switchWeapons.action.performed -= SwitchWeapons;
+    }
+
+    public void Shoot(InputAction.CallbackContext context) //Need special parameter called Callback context. We receive this from Unity's Input system
+    {
+        Debug.Log("Bang!");
     }
 
     //This does nothing functionally right now, but the keybind and debug log works
     public void Roll(InputAction.CallbackContext context)
-         {
-             if (context.started)
-             {
-                 Debug.Log("Roll!");
-             }
-         }
+    {
+        Debug.Log("Roll!");
+    }
     
     //This does nothing functionally right now, but the keybind and debug log works
     public void SwitchWeapons(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            Debug.Log("Switched!");
-        }
+        Debug.Log("Switched!");
     }
     
     public void OnRotate(InputAction.CallbackContext value)
@@ -92,7 +100,6 @@ public class PlayerController : MonoBehaviour
         moveVector = controls.PlayerMap.MoveControl.ReadValue<Vector2>();
         lookVector = controls.PlayerMap.LookControl.ReadValue<Vector2>();
         activeStickR = (Mathf.Abs(lookVector.x) > rightXDeadZ || Mathf.Abs(lookVector.y) > rightYDeadZ);
-
     }
 
     private void Move()
@@ -100,7 +107,7 @@ public class PlayerController : MonoBehaviour
         //Set move vector
         if (Mathf.Abs(moveVector.x) > leftXDeadZ || Mathf.Abs(moveVector.y) > leftYDeadZ) //WAS moveVector != Vector2.zero, but making "Deadzones"
         {
-            Debug.Log("Left Stick: " + moveVector);
+            //Debug.Log("Left Stick: " + moveVector);
             this.transform.position += new Vector3(moveVector.x, moveVector.y, 0) * (speed * Time.deltaTime);
         }
     }
@@ -115,19 +122,19 @@ public class PlayerController : MonoBehaviour
     {
         //All hail the LERP. This shit is crazy.
         LookLerpTimer();
-        
+
         //Set players look vector after LERPING
         //(Mathf.Abs(lookVector.x) > rightXDeadZ || Mathf.Abs(lookVector.y) > rightYDeadZ)
         if (activeStickR || lerping)
         {
             //Debug.Log("Right Stick: " + lookVector);
             lerping = true; //We are moving, so lerp
-            float currentHeading = Mathf.Atan2(-lookVector.x,lookVector.y); // Gets where we are currently looking for LERP
+            float currentHeading = Mathf.Atan2(-lookVector.x, lookVector.y); // Gets where we are currently looking for LERP
             float lastFrameHeading = Mathf.Atan2(-lastLookVector.x, lastLookVector.y); //Gets last frames look vector for LERP
-            
+
             //LERP TIME
             float heading = Mathf.Lerp(lastFrameHeading, currentHeading, t);
-          
+
             if (activeStickR)
             {
 
@@ -141,22 +148,15 @@ public class PlayerController : MonoBehaviour
 
                 Vector3 lastMousePos = mousePos;
                 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                if(lastMousePos != mousePos)
+                if (lastMousePos != mousePos)
                 {
                     Vector3 direction = mousePos - transform.position;
                     Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, direction);
                     transform.rotation = targetRotation;
                 }
-                else
-                {
-                    transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Rad2Deg);
-                }
             }
-            
-            Debug.Log(heading);
+            //Debug.Log(heading);
         }
-        
-        
         lastLookVector = controls.PlayerMap.LookControl.ReadValue<Vector2>();; //Assign at the end of update, this gets the same value as lookVector
     }
 
