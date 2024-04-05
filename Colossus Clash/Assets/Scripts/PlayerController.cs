@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -34,7 +36,18 @@ public class PlayerController : MonoBehaviour
     private bool lerping; //Are we lerping?
     [SerializeField] private float turnTime = 1f;
     private bool activeStickR; //Is the stick (right) is being touched?
-    
+
+    //movement and dash variables  ***
+    private const float MAX_SPEED = 5.0f; 
+    private float currentSpeed = 0.0f; // Unserialized current speed float
+    private bool isDashing = false; // To check if the player is dashing
+    private float dashSpeedMultiplier = 2.0f; // Speed multiplier for dash
+    private float dashDuration = 0.5f; // How long the dash effect lasts
+    private float dashTimer = 0.0f; // Timer to track dash duration
+    [SerializeField] private float accelerationTime = 5.0f; // Time it takes to reach max speed
+    private float speedPercent = 0.0f; // Current speed as a percentage of max speed
+    //*****
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,13 +65,19 @@ public class PlayerController : MonoBehaviour
 
         Look();
 
+        if (isDashing)
+        {
+            Dash();
+        }
+        // Visualize the acceleration (for debugging)
+        Debug.DrawLine(transform.position, transform.position + Vector3.up * currentSpeed, Color.red);
     }
 
     //On enable, connect each function to controls
     private void OnEnable()
     {
         shoot.action.performed += Shoot;
-        roll.action.performed += Roll;
+        roll.action.performed += DashInitiate;
         switchWeapons.action.performed += SwitchWeapons;
     }
 
@@ -66,13 +85,31 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         shoot.action.performed -= Shoot;
-        roll.action.performed -= Roll;
+        roll.action.performed -= DashInitiate;
         switchWeapons.action.performed -= SwitchWeapons;
     }
 
     public void Shoot(InputAction.CallbackContext context) //Need special parameter called Callback context. We receive this from Unity's Input system
     {
         Debug.Log("Bang!");
+    }
+
+    public void DashInitiate(InputAction.CallbackContext context)
+    {
+        if (!isDashing) // Start dashing if not already dashing
+        {
+            isDashing = true;
+            dashTimer = dashDuration;
+        }
+    }
+
+    private void Dash()
+    {
+        dashTimer -= Time.deltaTime;
+        if (dashTimer <= 0)
+        {
+            isDashing = false;
+        }
     }
 
     //This does nothing functionally right now, but the keybind and debug log works
@@ -104,13 +141,28 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        //Set move vector
-        if (Mathf.Abs(moveVector.x) > leftXDeadZ || Mathf.Abs(moveVector.y) > leftYDeadZ) //WAS moveVector != Vector2.zero, but making "Deadzones"
+        if (moveVector.magnitude > 0) // Use magnitude for deadzone checking
         {
-            //Debug.Log("Left Stick: " + moveVector);
-            this.transform.position += new Vector3(moveVector.x, moveVector.y, 0) * (speed * Time.deltaTime);
+            if (!isDashing)
+            {
+                // Smooth acceleration to max speed over 5 seconds
+                speedPercent += Time.deltaTime / accelerationTime;
+                speedPercent = Mathf.Clamp01(speedPercent);
+                currentSpeed = speedPercent * MAX_SPEED;
+            }
+            else
+            {
+                currentSpeed = MAX_SPEED * dashSpeedMultiplier; // Apply dash speed multiplier
+            }
+            Vector3 moveDirection = new Vector3(moveVector.x, 0, moveVector.y).normalized;
+            this.transform.position += moveDirection * (currentSpeed * Time.deltaTime);
+        }
+        else
+        {
+            speedPercent = 0; // Reset speed percent if not moving
         }
     }
+}
 
     /// <summary>
     /// A littl context here. This is Liner Interpolation, I added it into our Look method

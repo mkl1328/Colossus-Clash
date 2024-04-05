@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Colossus Clash",
+    "\\Colossus Clash\\Assets",
+    "\\Colossus Clash\\Assets\\Scripts"
   ],
-  "SelectedNode": "\\C:\\Users\\eugen\\Source\\Repos\\Colossus-Clash",
+  "SelectedNode": "\\Colossus Clash\\Assets\\Scripts\\PlayerController.cs",
   "PreviewInSolutionExplorer": false
 }
