@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputActionReference shoot, roll, switchWeapons;
 
     //Speed of Player (Edit in hierarchy, changing numbers here doesn't do anything)
-    [SerializeField] private float speed = 5.0f;
+    //[SerializeField] private float speed = 5.0f;
     
     //Set Deadzones (Edit in hierarchy, changing numbers here doesn't do anything)
     [SerializeField] private float leftXDeadZ = 0.1f;
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     private bool activeStickR; //Is the stick (right) is being touched?
 
     //movement and dash variables  ***
-    private const float MAX_SPEED = 5.0f; 
+    [SerializeField] private float MAX_SPEED = 10.0f; 
     private float currentSpeed = 0.0f; // Unserialized current speed float
     private bool isDashing = false; // To check if the player is dashing
     private float dashSpeedMultiplier = 2.0f; // Speed multiplier for dash
@@ -69,8 +69,7 @@ public class PlayerController : MonoBehaviour
         {
             Dash();
         }
-        // Visualize the acceleration (for debugging)
-        Debug.DrawLine(transform.position, transform.position + Vector3.up * currentSpeed, Color.red);
+ 
     }
 
     //On enable, connect each function to controls
@@ -91,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
     public void Shoot(InputAction.CallbackContext context) //Need special parameter called Callback context. We receive this from Unity's Input system
     {
-        Debug.Log("Bang!");
+        UnityEngine.Debug.Log("Bang!");
     }
 
     public void DashInitiate(InputAction.CallbackContext context)
@@ -100,6 +99,7 @@ public class PlayerController : MonoBehaviour
         {
             isDashing = true;
             dashTimer = dashDuration;
+            UnityEngine.Debug.Log("Dash!");
         }
     }
 
@@ -115,13 +115,13 @@ public class PlayerController : MonoBehaviour
     //This does nothing functionally right now, but the keybind and debug log works
     public void Roll(InputAction.CallbackContext context)
     {
-        Debug.Log("Roll!");
+        UnityEngine.Debug.Log("Roll!");
     }
     
     //This does nothing functionally right now, but the keybind and debug log works
     public void SwitchWeapons(InputAction.CallbackContext context)
     {
-        Debug.Log("Switched!");
+        UnityEngine.Debug.Log("Switched!");
     }
     
     public void OnRotate(InputAction.CallbackContext value)
@@ -141,11 +141,11 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        if (moveVector.magnitude > 0) // Use magnitude for deadzone checking
+        if (Mathf.Abs(moveVector.x) > leftXDeadZ || Mathf.Abs(moveVector.y) > leftYDeadZ) //WAS moveVector != Vector2.zero, but making "Deadzones"
         {
             if (!isDashing)
             {
-                // Smooth acceleration to max speed over 5 seconds
+                // Smooth acceleration to max speed over inputted (in editor) seconds
                 speedPercent += Time.deltaTime / accelerationTime;
                 speedPercent = Mathf.Clamp01(speedPercent);
                 currentSpeed = speedPercent * MAX_SPEED;
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
             {
                 currentSpeed = MAX_SPEED * dashSpeedMultiplier; // Apply dash speed multiplier
             }
-            Vector3 moveDirection = new Vector3(moveVector.x, 0, moveVector.y).normalized;
+            Vector3 moveDirection = new Vector3(moveVector.x, moveVector.y, 0).normalized;
             this.transform.position += moveDirection * (currentSpeed * Time.deltaTime);
         }
         else
@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
             speedPercent = 0; // Reset speed percent if not moving
         }
     }
-}
+
 
     /// <summary>
     /// A littl context here. This is Liner Interpolation, I added it into our Look method
