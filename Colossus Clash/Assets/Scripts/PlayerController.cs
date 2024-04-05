@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 lookVector;
     private Vector2 lastLookVector;
     private Vector3 mousePos;
+    private SpriteRenderer spriteRenderer;
 
     /// <summary>
     /// So for those who may be unfamiliar, Serialized fields are what
@@ -46,7 +47,17 @@ public class PlayerController : MonoBehaviour
     private float dashTimer = 0.0f; // Timer to track dash duration
     [SerializeField] private float accelerationTime = 0.4f; // Time it takes to reach max speed
     private float speedPercent = 0.0f; // Current speed as a percentage of max speed
+
+    public event Action<float> OnDashCooldownChanged;
+    // Public property to access the dash cooldown timer
+    public float DashCooldownTimer { get; private set; } = 0.0f;
+    // Private field for dash cooldown
+    [SerializeField] private float dashCooldown = 2.0f;
+    // Public property to access the dash cooldown time
+    public float DashCooldown { get { return dashCooldown; } }
     //*****
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +65,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Start");
         controls = new Controls(); //Turned on controls
         controls.PlayerMap.Enable(); //Enabled player object
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -69,7 +81,18 @@ public class PlayerController : MonoBehaviour
         {
             Dash();
         }
- 
+
+        // Update the dash cooldown timer
+        if (DashCooldownTimer > 0)
+        {
+            DashCooldownTimer -= Time.deltaTime;
+            OnDashCooldownChanged?.Invoke(DashCooldownTimer);
+        }
+        else if (DashCooldownTimer < 0) // Ensure we don't go below 0
+        {
+            DashCooldownTimer = 0;
+        }
+
     }
 
     //On enable, connect each function to controls
@@ -95,11 +118,14 @@ public class PlayerController : MonoBehaviour
 
     public void DashInitiate(InputAction.CallbackContext context)
     {
-        if (!isDashing) // Start dashing if not already dashing
+        if (!isDashing & DashCooldownTimer <= 0) // Start dashing if not already dashing
         {
             isDashing = true;
             dashTimer = dashDuration;
+            DashCooldownTimer = dashCooldown;
+            OnDashCooldownChanged?.Invoke(DashCooldownTimer);
             UnityEngine.Debug.Log("Dash!");
+            spriteRenderer.color = Color.red;
         }
     }
 
@@ -109,6 +135,7 @@ public class PlayerController : MonoBehaviour
         if (dashTimer <= 0)
         {
             isDashing = false;
+            spriteRenderer.color = Color.white;
         }
     }
 
