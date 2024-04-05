@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     /// So for those who may be unfamiliar, Serialized fields are what
     /// we do keep PRIVATE variables, but still be able to edit them in Unity's inspector
     /// -Luke
-    /// </summary>
+    /// </summary> test
     /// 
 
     //Get references to each control set
