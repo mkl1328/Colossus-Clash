@@ -55,7 +55,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Roll Control"",
+                    ""name"": ""Dash Control"",
                     ""type"": ""Button"",
                     ""id"": ""fca096e0-3e25-499c-8fab-166325b91adf"",
                     ""expectedControlType"": ""Button"",
@@ -301,7 +301,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Roll Control"",
+                    ""action"": ""Dash Control"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -312,7 +312,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Roll Control"",
+                    ""action"": ""Dash Control"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -323,7 +323,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Touch"",
-                    ""action"": ""Roll Control"",
+                    ""action"": ""Dash Control"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -334,7 +334,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
-                    ""action"": ""Roll Control"",
+                    ""action"": ""Dash Control"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -345,7 +345,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
-                    ""action"": ""Roll Control"",
+                    ""action"": ""Dash Control"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -991,7 +991,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_PlayerMap_MoveControl = m_PlayerMap.FindAction("Move Control", throwIfNotFound: true);
         m_PlayerMap_LookControl = m_PlayerMap.FindAction("Look Control", throwIfNotFound: true);
         m_PlayerMap_ShootControl = m_PlayerMap.FindAction("Shoot Control", throwIfNotFound: true);
-        m_PlayerMap_RollControl = m_PlayerMap.FindAction("Roll Control", throwIfNotFound: true);
+        m_PlayerMap_DashControl = m_PlayerMap.FindAction("Dash Control", throwIfNotFound: true);
         m_PlayerMap_SwitchControl = m_PlayerMap.FindAction("Switch Control", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -1069,7 +1069,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMap_MoveControl;
     private readonly InputAction m_PlayerMap_LookControl;
     private readonly InputAction m_PlayerMap_ShootControl;
-    private readonly InputAction m_PlayerMap_RollControl;
+    private readonly InputAction m_PlayerMap_DashControl;
     private readonly InputAction m_PlayerMap_SwitchControl;
     public struct PlayerMapActions
     {
@@ -1078,7 +1078,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @MoveControl => m_Wrapper.m_PlayerMap_MoveControl;
         public InputAction @LookControl => m_Wrapper.m_PlayerMap_LookControl;
         public InputAction @ShootControl => m_Wrapper.m_PlayerMap_ShootControl;
-        public InputAction @RollControl => m_Wrapper.m_PlayerMap_RollControl;
+        public InputAction @DashControl => m_Wrapper.m_PlayerMap_DashControl;
         public InputAction @SwitchControl => m_Wrapper.m_PlayerMap_SwitchControl;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
@@ -1098,9 +1098,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ShootControl.started += instance.OnShootControl;
             @ShootControl.performed += instance.OnShootControl;
             @ShootControl.canceled += instance.OnShootControl;
-            @RollControl.started += instance.OnRollControl;
-            @RollControl.performed += instance.OnRollControl;
-            @RollControl.canceled += instance.OnRollControl;
+            @DashControl.started += instance.OnDashControl;
+            @DashControl.performed += instance.OnDashControl;
+            @DashControl.canceled += instance.OnDashControl;
             @SwitchControl.started += instance.OnSwitchControl;
             @SwitchControl.performed += instance.OnSwitchControl;
             @SwitchControl.canceled += instance.OnSwitchControl;
@@ -1117,9 +1117,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ShootControl.started -= instance.OnShootControl;
             @ShootControl.performed -= instance.OnShootControl;
             @ShootControl.canceled -= instance.OnShootControl;
-            @RollControl.started -= instance.OnRollControl;
-            @RollControl.performed -= instance.OnRollControl;
-            @RollControl.canceled -= instance.OnRollControl;
+            @DashControl.started -= instance.OnDashControl;
+            @DashControl.performed -= instance.OnDashControl;
+            @DashControl.canceled -= instance.OnDashControl;
             @SwitchControl.started -= instance.OnSwitchControl;
             @SwitchControl.performed -= instance.OnSwitchControl;
             @SwitchControl.canceled -= instance.OnSwitchControl;
@@ -1308,7 +1308,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnMoveControl(InputAction.CallbackContext context);
         void OnLookControl(InputAction.CallbackContext context);
         void OnShootControl(InputAction.CallbackContext context);
-        void OnRollControl(InputAction.CallbackContext context);
+        void OnDashControl(InputAction.CallbackContext context);
         void OnSwitchControl(InputAction.CallbackContext context);
     }
     public interface IUIActions

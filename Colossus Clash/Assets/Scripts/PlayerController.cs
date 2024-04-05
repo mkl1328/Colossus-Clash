@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     /// 
 
     //Get references to each control set
-    [SerializeField] private InputActionReference shoot, roll, switchWeapons;
+    [SerializeField] private InputActionReference shoot, dash, switchWeapons;
 
     //Speed of Player (Edit in hierarchy, changing numbers here doesn't do anything)
     //[SerializeField] private float speed = 5.0f;
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     private float dashSpeedMultiplier = 2.0f; // Speed multiplier for dash
     private float dashDuration = 0.5f; // How long the dash effect lasts
     private float dashTimer = 0.0f; // Timer to track dash duration
-    [SerializeField] private float accelerationTime = 5.0f; // Time it takes to reach max speed
+    [SerializeField] private float accelerationTime = 0.4f; // Time it takes to reach max speed
     private float speedPercent = 0.0f; // Current speed as a percentage of max speed
     //*****
 
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         shoot.action.performed += Shoot;
-        roll.action.performed += DashInitiate;
+        dash.action.performed += DashInitiate;
         switchWeapons.action.performed += SwitchWeapons;
     }
 
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         shoot.action.performed -= Shoot;
-        roll.action.performed -= DashInitiate;
+        dash.action.performed -= DashInitiate;
         switchWeapons.action.performed -= SwitchWeapons;
     }
 
@@ -112,12 +112,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //This does nothing functionally right now, but the keybind and debug log works
-    public void Roll(InputAction.CallbackContext context)
-    {
-        UnityEngine.Debug.Log("Roll!");
-    }
-    
     //This does nothing functionally right now, but the keybind and debug log works
     public void SwitchWeapons(InputAction.CallbackContext context)
     {

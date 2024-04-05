@@ -349,14 +349,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoot: {fileID: -7515091667816038108, guid: 6c02f6f7de023d44e9066e92e6fe36f6, type: 3}
-  roll: {fileID: 8044771436128869048, guid: 6c02f6f7de023d44e9066e92e6fe36f6, type: 3}
+  dash: {fileID: 8044771436128869048, guid: 6c02f6f7de023d44e9066e92e6fe36f6, type: 3}
   switchWeapons: {fileID: -7077464316454161411, guid: 6c02f6f7de023d44e9066e92e6fe36f6, type: 3}
-  speed: 5
   leftXDeadZ: 0.1
   leftYDeadZ: 0.1
   rightXDeadZ: 0.1
   rightYDeadZ: 0.1
   turnTime: 1
+  MAX_SPEED: 10
+  accelerationTime: 0.4
 --- !u!212 &1036771915
 SpriteRenderer:
   m_ObjectHideFlags: 0
