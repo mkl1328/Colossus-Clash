@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    //Control Systems
     private Controls controls;
     private Vector2 moveVector;
     private Vector2 lookVector;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float accelerationTime = 0.4f; // Time it takes to reach max speed
     private float speedPercent = 0.0f; // Current speed as a percentage of max speed
 
+
     public event Action<float> OnDashCooldownChanged;
     // Public property to access the dash cooldown timer
     public float DashCooldownTimer { get; private set; } = 0.0f;
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashCooldown = 2.0f;
     // Public property to access the dash cooldown time
     public float DashCooldown { get { return dashCooldown; } }
+
     //*****
 
 
@@ -72,6 +75,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ReadStickInput();
+
+        FindMousePosition();
 
         Move();
 
@@ -93,6 +98,11 @@ public class PlayerController : MonoBehaviour
             DashCooldownTimer = 0;
         }
 
+    }
+
+    private void FindMousePosition()
+    {
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     //On enable, connect each function to controls
@@ -198,7 +208,9 @@ public class PlayerController : MonoBehaviour
 
         //Set players look vector after LERPING
         //(Mathf.Abs(lookVector.x) > rightXDeadZ || Mathf.Abs(lookVector.y) > rightYDeadZ)
-        if (activeStickR || lerping)
+        bool mouseActive = true;
+
+        if (activeStickR || lerping || mouseActive)
         {
             //Debug.Log("Right Stick: " + lookVector);
             lerping = true; //We are moving, so lerp
@@ -208,8 +220,7 @@ public class PlayerController : MonoBehaviour
             //LERP TIME
             float heading = Mathf.Lerp(lastFrameHeading, currentHeading, t);
 
-            if (activeStickR)
-            {
+            
 
                 /* Down below is logic for rotating with the mouse, basically the mousePos needs to be in world space not screenspace
                 Input.mousePosition is in screenspace so I use Camera.main.ScreenToWorldPoint to convert it, then just get a direction 
@@ -219,15 +230,14 @@ public class PlayerController : MonoBehaviour
                 that way this code will use the correct logic depending on which control method is being used this does not really work, 
                 it's whats making the mouse rotation kinda spastic so i'll figure out a better way later - Paul */
 
-                Vector3 lastMousePos = mousePos;
-                mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                if (lastMousePos != mousePos)
-                {
+                //Vector3 lastMousePos = mousePos;
+                
+                
                     Vector3 direction = mousePos - transform.position;
                     Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, direction);
                     transform.rotation = targetRotation;
-                }
-            }
+                
+            
             //Debug.Log(heading);
         }
         lastLookVector = controls.PlayerMap.LookControl.ReadValue<Vector2>();; //Assign at the end of update, this gets the same value as lookVector
