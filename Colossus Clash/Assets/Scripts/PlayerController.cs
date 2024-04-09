@@ -208,7 +208,9 @@ public class PlayerController : MonoBehaviour
 
         //Set players look vector after LERPING
         //(Mathf.Abs(lookVector.x) > rightXDeadZ || Mathf.Abs(lookVector.y) > rightYDeadZ)
-        bool mouseActive = true;
+
+
+        bool mouseActive = true; //Change into a method that gets true/false based on current control system
 
         if (activeStickR || lerping || mouseActive)
         {
