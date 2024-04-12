@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     //movement and dash variables  ***
     [SerializeField] private float MAX_SPEED = 10.0f; 
     private float currentSpeed = 0.0f; // Unserialized current speed float
-    private bool isDashing = false; // To check if the player is dashing
+    public bool isDashing = false; // To check if the player is dashing
     private float dashSpeedMultiplier = 2.0f; // Speed multiplier for dash
     private float dashDuration = 0.5f; // How long the dash effect lasts
     private float dashTimer = 0.0f; // Timer to track dash duration
