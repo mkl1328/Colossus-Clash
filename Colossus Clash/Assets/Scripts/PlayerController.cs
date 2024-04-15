@@ -58,6 +58,9 @@ public class PlayerController : MonoBehaviour
     // Public property to access the dash cooldown time
     public float DashCooldown { get { return dashCooldown; } }
 
+    public Gun gun;
+
+
     //*****
 
 
@@ -121,9 +124,13 @@ public class PlayerController : MonoBehaviour
         switchWeapons.action.performed -= SwitchWeapons;
     }
 
-    public void Shoot(InputAction.CallbackContext context) //Need special parameter called Callback context. We receive this from Unity's Input system
+    public void Shoot(InputAction.CallbackContext context)
     {
-        UnityEngine.Debug.Log("Bang!");
+        if (context.performed) // Check if the shoot action was performed
+        {
+            gun.Shoot(); // Call the Shoot method on the gun
+            UnityEngine.Debug.Log("Bang!");
+        }
     }
 
     public void DashInitiate(InputAction.CallbackContext context)
