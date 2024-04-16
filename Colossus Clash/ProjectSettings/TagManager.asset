@@ -38,6 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: TM_Ground
+    uniqueID: 3883512539
+    locked: 0
+  - name: TM_GroundDecor
+    uniqueID: 167435849
+    locked: 0
+  - name: TM_Flower
+    uniqueID: 2074237543
+    locked: 0
+  - name: TM_Wall
+    uniqueID: 1760800801
+    locked: 0
+  - name: TM_WallDecor
+    uniqueID: 3275645787
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
