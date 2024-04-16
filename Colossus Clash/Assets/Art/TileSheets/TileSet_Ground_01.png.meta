@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TileSet_Ground_01_0
+      name: Wall_TopLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -131,7 +131,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_1
+      name: Wall_TopEdge
       rect:
         serializedVersion: 2
         x: 105
@@ -152,7 +152,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_2
+      name: Wall_TopRight
       rect:
         serializedVersion: 2
         x: 210
@@ -173,7 +173,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_3
+      name: Ground_Dark_TopLeft
       rect:
         serializedVersion: 2
         x: 315
@@ -194,7 +194,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_4
+      name: Ground_Dark_Top
       rect:
         serializedVersion: 2
         x: 420
@@ -215,7 +215,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -228,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_5
+      name: Ground_Dark_TopRight
       rect:
         serializedVersion: 2
         x: 525
@@ -236,7 +236,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_6
+      name: Ground_Light_TopLeft
       rect:
         serializedVersion: 2
         x: 630
@@ -257,7 +257,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,7 +270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_7
+      name: Ground_Light_Top
       rect:
         serializedVersion: 2
         x: 735
@@ -278,7 +278,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -291,7 +291,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_8
+      name: Ground_Light_TopRight
       rect:
         serializedVersion: 2
         x: 840
@@ -299,7 +299,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -312,7 +312,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_9
+      name: Wall_LeftEdge
       rect:
         serializedVersion: 2
         x: 0
@@ -320,7 +320,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -333,7 +333,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_10
+      name: Wall_Top
       rect:
         serializedVersion: 2
         x: 105
@@ -341,7 +341,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -354,7 +354,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_11
+      name: Wall_RightEdge
       rect:
         serializedVersion: 2
         x: 210
@@ -362,7 +362,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -375,7 +375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_12
+      name: Ground_Dark_Left
       rect:
         serializedVersion: 2
         x: 315
@@ -383,7 +383,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -396,7 +396,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_13
+      name: Ground_Dark_Middle
       rect:
         serializedVersion: 2
         x: 420
@@ -404,7 +404,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -417,7 +417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_14
+      name: Ground_Dark_Right
       rect:
         serializedVersion: 2
         x: 525
@@ -425,7 +425,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -438,7 +438,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_15
+      name: Ground_Light_Left
       rect:
         serializedVersion: 2
         x: 630
@@ -446,7 +446,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -459,7 +459,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_16
+      name: Ground_Light_Middle
       rect:
         serializedVersion: 2
         x: 735
@@ -467,7 +467,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -480,7 +480,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_17
+      name: Ground_Light_Right
       rect:
         serializedVersion: 2
         x: 840
@@ -488,7 +488,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -501,7 +501,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_18
+      name: Wall_LeftSide
       rect:
         serializedVersion: 2
         x: 0
@@ -509,7 +509,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -522,7 +522,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_19
+      name: Wall
       rect:
         serializedVersion: 2
         x: 105
@@ -530,7 +530,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -543,7 +543,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_20
+      name: Wall_RightEdg
       rect:
         serializedVersion: 2
         x: 210
@@ -551,7 +551,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -564,7 +564,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_21
+      name: Ground_Dark_BottomLeft
       rect:
         serializedVersion: 2
         x: 315
@@ -572,7 +572,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -585,7 +585,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_22
+      name: Ground_Dark_Bottom
       rect:
         serializedVersion: 2
         x: 420
@@ -593,7 +593,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -606,7 +606,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_23
+      name: Ground_Dark_BottomRight
       rect:
         serializedVersion: 2
         x: 525
@@ -614,7 +614,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -627,7 +627,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_24
+      name: Ground_Light_BottomLeft
       rect:
         serializedVersion: 2
         x: 630
@@ -635,7 +635,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -648,7 +648,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_25
+      name: Ground_Light_Bottom
       rect:
         serializedVersion: 2
         x: 735
@@ -656,7 +656,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -669,7 +669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_26
+      name: Ground_Light_BottomRight
       rect:
         serializedVersion: 2
         x: 840
@@ -677,7 +677,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -690,7 +690,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_27
+      name: Wall_GroundLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -698,7 +698,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -711,7 +711,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_28
+      name: Wall_Ground
       rect:
         serializedVersion: 2
         x: 105
@@ -719,7 +719,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -732,7 +732,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_29
+      name: Wall_GroundRight
       rect:
         serializedVersion: 2
         x: 210
@@ -740,7 +740,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -753,7 +753,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_30
+      name: Ground_Dark_TopLeft_Big
       rect:
         serializedVersion: 2
         x: 315
@@ -761,7 +761,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -774,7 +774,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_31
+      name: Ground_Dark_TopRight_Big
       rect:
         serializedVersion: 2
         x: 420
@@ -782,7 +782,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -795,7 +795,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_32
+      name: Ground_Dark_Middle_Hole
       rect:
         serializedVersion: 2
         x: 525
@@ -803,7 +803,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -816,7 +816,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_33
+      name: Ground_Light_TopLeft_Big
       rect:
         serializedVersion: 2
         x: 630
@@ -824,7 +824,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -837,7 +837,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_34
+      name: Ground_Light_TopRight_Big
       rect:
         serializedVersion: 2
         x: 735
@@ -845,7 +845,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -858,7 +858,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_35
+      name: Ground_Light_Middle_Hole
       rect:
         serializedVersion: 2
         x: 840
@@ -866,7 +866,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -879,7 +879,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_36
+      name: Ground_Neutral_Middle_Blank
       rect:
         serializedVersion: 2
         x: 0
@@ -887,7 +887,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -900,7 +900,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_37
+      name: FloorDecor_FlowerRed
       rect:
         serializedVersion: 2
         x: 105
@@ -908,7 +908,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -921,7 +921,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_38
+      name: FloorDecor_FlowerPink
       rect:
         serializedVersion: 2
         x: 210
@@ -929,7 +929,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -942,7 +942,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_39
+      name: Ground_Dark_BottomLeft_Big
       rect:
         serializedVersion: 2
         x: 315
@@ -950,7 +950,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -963,7 +963,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_40
+      name: Ground_Dark_BottomRight_Big
       rect:
         serializedVersion: 2
         x: 420
@@ -971,7 +971,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -984,7 +984,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_41
+      name: Ground_Dark_Middle_Blank
       rect:
         serializedVersion: 2
         x: 525
@@ -992,7 +992,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1005,7 +1005,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_42
+      name: Ground_Light_BottomLeft_Big
       rect:
         serializedVersion: 2
         x: 630
@@ -1013,7 +1013,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1026,7 +1026,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_43
+      name: Ground_Light_BottomRight_Big
       rect:
         serializedVersion: 2
         x: 735
@@ -1034,7 +1034,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1047,7 +1047,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileSet_Ground_01_44
+      name: Ground_Light_Middle_Blank
       rect:
         serializedVersion: 2
         x: 840
@@ -1055,7 +1055,7 @@ TextureImporter:
         width: 100
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1078,51 +1078,51 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TileSet_Ground_01_0: 396336539
-      TileSet_Ground_01_1: -2023854969
-      TileSet_Ground_01_10: -1817195026
-      TileSet_Ground_01_11: 134376243
-      TileSet_Ground_01_12: 2005331831
-      TileSet_Ground_01_13: 23885401
-      TileSet_Ground_01_14: -484384580
-      TileSet_Ground_01_15: 732088643
-      TileSet_Ground_01_16: -1918712215
-      TileSet_Ground_01_17: -2064604151
-      TileSet_Ground_01_18: 1032896622
-      TileSet_Ground_01_19: 2106393390
-      TileSet_Ground_01_2: -212003855
-      TileSet_Ground_01_20: 830937710
-      TileSet_Ground_01_21: 130936994
-      TileSet_Ground_01_22: 1030724435
-      TileSet_Ground_01_23: -1738140679
-      TileSet_Ground_01_24: -776920075
-      TileSet_Ground_01_25: 1267420741
-      TileSet_Ground_01_26: -1886818808
-      TileSet_Ground_01_27: -1223501221
-      TileSet_Ground_01_28: -448245598
-      TileSet_Ground_01_29: 937882850
-      TileSet_Ground_01_3: 1369831818
-      TileSet_Ground_01_30: 1762612601
-      TileSet_Ground_01_31: 403463875
-      TileSet_Ground_01_32: -230152913
-      TileSet_Ground_01_33: -1511409484
-      TileSet_Ground_01_34: -1180754206
-      TileSet_Ground_01_35: -743031541
-      TileSet_Ground_01_36: -1562882990
-      TileSet_Ground_01_37: -717466857
-      TileSet_Ground_01_38: -502855234
-      TileSet_Ground_01_39: 1664136242
-      TileSet_Ground_01_4: 1582999625
-      TileSet_Ground_01_40: 744194723
-      TileSet_Ground_01_41: 79438998
-      TileSet_Ground_01_42: 1093350263
-      TileSet_Ground_01_43: 721686305
-      TileSet_Ground_01_44: 1800453980
-      TileSet_Ground_01_5: -656688790
-      TileSet_Ground_01_6: 1377851299
-      TileSet_Ground_01_7: -1542366009
-      TileSet_Ground_01_8: -554804519
-      TileSet_Ground_01_9: 1193551699
+      FloorDecor_FlowerPink: 1582999625
+      FloorDecor_FlowerRed: 1369831818
+      Ground_Dark_Bottom: -1738140679
+      Ground_Dark_BottomLeft: 1762612601
+      Ground_Dark_BottomLeft_Big: 744194723
+      Ground_Dark_BottomRight: 1762612601
+      Ground_Dark_BottomRight_Big: 79438998
+      Ground_Dark_Left: 1030724435
+      Ground_Dark_Middle: -656688790
+      Ground_Dark_Middle_Blank: -230152913
+      Ground_Dark_Middle_Hole: -1918712215
+      Ground_Dark_Right: -1738140679
+      Ground_Dark_Top: -484384580
+      Ground_Dark_TopLeft: 2005331831
+      Ground_Dark_TopLeft_Big: 403463875
+      Ground_Dark_TopRight: 130936994
+      Ground_Dark_TopRight_Big: 1664136242
+      Ground_Light_Bottom: 1267420741
+      Ground_Light_BottomLeft: -776920075
+      Ground_Light_BottomLeft_Big: 1093350263
+      Ground_Light_BottomRight: -1886818808
+      Ground_Light_BottomRight_Big: 721686305
+      Ground_Light_Left: 732088643
+      Ground_Light_Middle: 1377851299
+      Ground_Light_Middle_Blank: 1800453980
+      Ground_Light_Middle_Hole: -743031541
+      Ground_Light_Right: -2064604151
+      Ground_Light_Top: -554804519
+      Ground_Light_TopLeft: -1542366009
+      Ground_Light_TopLeft_Big: -1511409484
+      Ground_Light_TopRight: -554804519
+      Ground_Light_TopRight_Big: -1180754206
+      Ground_Neutral_Middle_Blank: 23885401
+      Wall: 937882850
+      Wall_Ground: -717466857
+      Wall_GroundLeft: -1562882990
+      Wall_GroundRight: -502855234
+      Wall_LeftEdge: 830937710
+      Wall_LeftSide: 937882850
+      Wall_RightEdg: 937882850
+      Wall_RightEdge: -448245598
+      Wall_Top: -1223501221
+      Wall_TopEdge: 1032896622
+      Wall_TopLeft: 134376243
+      Wall_TopRight: 2106393390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
