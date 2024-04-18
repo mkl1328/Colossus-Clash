@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
     //Get references to each control set
     [SerializeField] private InputActionReference shoot, dash, switchWeapons;
 
-    [SerializeField] private EdgeCollider2D edgeColliders;
 
     //Speed of Player (Edit in hierarchy, changing numbers here doesn't do anything)
     //[SerializeField] private float speed = 5.0f;
@@ -198,7 +197,6 @@ public class PlayerController : MonoBehaviour
             }
             Vector3 moveDirection = new Vector3(moveVector.x, moveVector.y, 0).normalized;
             Vector3 newPosition = transform.position + moveDirection * (currentSpeed * Time.deltaTime);
-            //this.transform.position += moveDirection * (currentSpeed * Time.deltaTime);
             rb.MovePosition(new Vector2(newPosition.x, newPosition.y));
 
         }
@@ -274,19 +272,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void EdgeColliderManagement()
-    {
-        if (true) //pseudocode for now (If Player is touching EdgeCollider2D Obj, then true, else false)
-        {
-            //directional vector (e.g +x, -x, +y, -y = 0 based on which wall its touching)
-            //Example, Right wall
-            //IF TOUCHING RIGHT WALL
-            //Position.x = RightWallPos + Radius of player (Locks player to the specific position, make them unable to move left or right)
-            //If MoveRight then Position.x ++; (give player a way to move away from the wall
-
-            //WARNING: ^^ Shitty code, but should work well enough for the prototype
-        }
-
-    }
     
 }
