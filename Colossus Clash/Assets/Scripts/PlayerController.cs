@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     /// we do keep PRIVATE variables, but still be able to edit them in Unity's inspector
     /// -Luke
     /// </summary> test
-    private WeaponManager weaponManager = gameObject.GetComponent<WeaponManager>()
+    /// 
+    //get weaponmanager info
+    //private WeaponManager weaponManager = gameObject.GetComponent<WeaponManager>();
 
     //Get references to each control set
     [SerializeField] private InputActionReference shoot, dash, switchWeapons;
@@ -161,7 +163,7 @@ public class PlayerController : MonoBehaviour
     //This does nothing functionally right now, but the keybind and debug log works
     public void SwitchWeapons(InputAction.CallbackContext context)
     {
-        weaponManager.SelectWeapon();
+        //weaponManager.SelectWeapon(); figure this out somewhat
         
         UnityEngine.Debug.Log("Switched!");
     }
