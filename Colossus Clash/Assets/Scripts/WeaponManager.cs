@@ -5,41 +5,33 @@ using UnityEngine;
 public class WeaponManager : MonoBehaviour
 {
     public int selectedWeapon = 0;
+    private int previousSelectedWeapon;
 
-    void Start()
+    void SelectWeapon()
     {
-        SelectWeapon();
-    }
-
-    void Update()
-    {
-        int previousSelectedWeapon = selectedWeapon;
+        previousSelectedWeapon = selectedWeapon;
 
         // Check if the 'E' key is pressed to cycle through weapons
-        if (Input.GetKeyDown(KeyCode.E))
+        selectedWeapon++;
+        if (selectedWeapon >= transform.childCount) // If we exceed the number of weapons, loop back to the first
         {
-            selectedWeapon++;
-            if (selectedWeapon >= transform.childCount) // If we exceed the number of weapons, loop back to the first
-            {
-                selectedWeapon = 0;
-            }
+            selectedWeapon = 0;
         }
+        
 
         // Apply the weapon selection if it has changed
         if (previousSelectedWeapon != selectedWeapon)
         {
-            SelectWeapon();
+            int i = 0;
+            foreach (Transform weapon in transform)
+            {
+                // Activate the selected weapon and deactivate others
+                weapon.gameObject.SetActive(i == selectedWeapon);
+                i++;
+            }
         }
+        
     }
 
-    void SelectWeapon()
-    {
-        int i = 0;
-        foreach (Transform weapon in transform)
-        {
-            // Activate the selected weapon and deactivate others
-            weapon.gameObject.SetActive(i == selectedWeapon);
-            i++;
-        }
-    }
+    
 }
