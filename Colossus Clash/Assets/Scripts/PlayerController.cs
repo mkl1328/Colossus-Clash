@@ -162,6 +162,7 @@ public class PlayerController : MonoBehaviour
     public void SwitchWeapons(InputAction.CallbackContext context)
     {
         weaponManager.SelectWeapon();
+        
         UnityEngine.Debug.Log("Switched!");
     }
     
