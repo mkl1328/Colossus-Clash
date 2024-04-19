@@ -272,5 +272,23 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check for an enemy tag and apply damage if necessary
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+
+            loseHealth(1);
+
+            // Destroy the bullet after it hits an enemy
+            Destroy(collision.gameObject);
+        }
+    }
     
+    private void loseHealth(int damage)
+    {
+        UnityEngine.Debug.Log("got hit");
+    }
+
 }
