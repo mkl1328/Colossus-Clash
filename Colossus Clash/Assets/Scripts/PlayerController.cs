@@ -163,9 +163,7 @@ public class PlayerController : MonoBehaviour
     //This does nothing functionally right now, but the keybind and debug log works
     public void SwitchWeapons(InputAction.CallbackContext context)
     {
-        //weaponManager.SelectWeapon(); figure this out somewhat
-        
-        UnityEngine.Debug.Log("Switched!");
+        gun.SwitchWeapon(); //figure this out somewhat
     }
     
     public void OnRotate(InputAction.CallbackContext value)

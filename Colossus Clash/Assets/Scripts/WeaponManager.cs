@@ -1,3 +1,5 @@
+//this class currently doesnt do anything
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,3 +37,4 @@ public class WeaponManager : MonoBehaviour
 
     
 }
+*/
