@@ -7132,6 +7132,10 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5378320110335681048, guid: bcf33603a9a86e34aa81a80ffde26da8, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5378320110335681048, guid: bcf33603a9a86e34aa81a80ffde26da8, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1036771916}
@@ -7139,6 +7143,10 @@ PrefabInstance:
       propertyPath: shootTime
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5378320110335681048, guid: bcf33603a9a86e34aa81a80ffde26da8, type: 3}
+      propertyPath: seekTarget
+      value: 
+      objectReference: {fileID: 1036771913}
     - target: {fileID: 5378320110335681048, guid: bcf33603a9a86e34aa81a80ffde26da8, type: 3}
       propertyPath: bulletPrefab
       value: 
