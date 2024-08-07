@@ -26,11 +26,17 @@ public class Enemy : MonoBehaviour
         if (time > shootTime)
         {
             time = 0.0f;
-            Shoot();
+            if(inRange(seekTarget))
+            {
+                Shoot();
+            }
         }
-        
+
         //Move towards player
-        Seek(seekTarget);
+        if(inRange(seekTarget))
+        {
+            Seek(seekTarget);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -69,5 +75,18 @@ public class Enemy : MonoBehaviour
         
         //Move towards the target
         transform.position += direction * (speed * Time.deltaTime); //Parenthesis is for multiplication effeciency
+    }
+
+    //so the enemy only chases the player if its within a certain range
+    private bool inRange(GameObject player)
+    {
+        float xDistance = Mathf.Abs(transform.position.x - player.transform.position.x);
+        float yDistance = Mathf.Abs(transform.position.y - player.transform.position.y);
+        if (xDistance + yDistance < 20)
+        {
+            return true;
+        }
+
+        return false;   
     }
 }
